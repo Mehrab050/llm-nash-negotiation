@@ -1,0 +1,684 @@
+======================================================================
+NEGOTIATION DIALOGUE LOG
+Generated: 2026-03-10 21:23:16
+Total API calls: 0
+======================================================================
+
+--- Negotiation #1 ---
+Resource: zone_b
+Parties: Roof Robot vs Frame Robot
+Resolution Time: 0.1 ms
+Used LLM: False
+Nash Allocation: Roof Robot: start=09:45, dur=60min | Frame Robot: start=13:52, dur=60min
+
+[21:23:09] Roof Robot (proposer):
+  Based on my task priority and timeline requirements, I propose we follow the Nash Bargaining allocation. This ensures a fair division of resource access time.
+
+[21:23:09] Frame Robot (responder):
+  As a high-priority agent on the critical path, I need this resource urgently. Any delay to my task cascades to all downstream operations. I accept the Nash allocation that gives me earlier access.
+
+[21:23:09] System (system):
+  AGREEMENT REACHED: Roof Robot gets 'zone_b' at 09:45 for 60min. Frame Robot gets 'zone_b' at 13:52 for 60min. Nash Equilibrium confirmed.
+
+FINAL: AGREEMENT REACHED: Roof Robot gets 'zone_b' at 09:45 for 60min. Frame Robot gets 'zone_b' at 13:52 for 60min. Nash Equilibrium confirmed.
+----------------------------------------------------------------------
+
+--- Negotiation #2 ---
+Resource: crane
+Parties: Roof Robot vs Frame Robot
+Resolution Time: 0.1 ms
+Used LLM: False
+Nash Allocation: Roof Robot: start=09:45, dur=60min | Frame Robot: start=13:52, dur=60min
+
+[21:23:09] Roof Robot (proposer):
+  Based on my task priority and timeline requirements, I propose we follow the Nash Bargaining allocation. This ensures a fair division of resource access time.
+
+[21:23:09] Frame Robot (responder):
+  As a high-priority agent on the critical path, I need this resource urgently. Any delay to my task cascades to all downstream operations. I accept the Nash allocation that gives me earlier access.
+
+[21:23:09] System (system):
+  AGREEMENT REACHED: Roof Robot gets 'crane' at 09:45 for 60min. Frame Robot gets 'crane' at 13:52 for 60min. Nash Equilibrium confirmed.
+
+FINAL: AGREEMENT REACHED: Roof Robot gets 'crane' at 09:45 for 60min. Frame Robot gets 'crane' at 13:52 for 60min. Nash Equilibrium confirmed.
+----------------------------------------------------------------------
+
+--- Negotiation #3 ---
+Resource: zone_b
+Parties: Roof Robot vs Frame Robot
+Resolution Time: 0.0 ms
+Used LLM: False
+Nash Allocation: Roof Robot: start=09:50, dur=60min | Frame Robot: start=13:55, dur=60min
+
+[21:23:09] Roof Robot (proposer):
+  Based on my task priority and timeline requirements, I propose we follow the Nash Bargaining allocation. This ensures a fair division of resource access time.
+
+[21:23:09] Frame Robot (responder):
+  As a high-priority agent on the critical path, I need this resource urgently. Any delay to my task cascades to all downstream operations. I accept the Nash allocation that gives me earlier access.
+
+[21:23:09] System (system):
+  AGREEMENT REACHED: Roof Robot gets 'zone_b' at 09:50 for 60min. Frame Robot gets 'zone_b' at 13:55 for 60min. Nash Equilibrium confirmed.
+
+FINAL: AGREEMENT REACHED: Roof Robot gets 'zone_b' at 09:50 for 60min. Frame Robot gets 'zone_b' at 13:55 for 60min. Nash Equilibrium confirmed.
+----------------------------------------------------------------------
+
+--- Negotiation #4 ---
+Resource: crane
+Parties: Roof Robot vs Frame Robot
+Resolution Time: 0.1 ms
+Used LLM: False
+Nash Allocation: Roof Robot: start=09:50, dur=60min | Frame Robot: start=13:55, dur=60min
+
+[21:23:09] Roof Robot (proposer):
+  Based on my task priority and timeline requirements, I propose we follow the Nash Bargaining allocation. This ensures a fair division of resource access time.
+
+[21:23:09] Frame Robot (responder):
+  As a high-priority agent on the critical path, I need this resource urgently. Any delay to my task cascades to all downstream operations. I accept the Nash allocation that gives me earlier access.
+
+[21:23:09] System (system):
+  AGREEMENT REACHED: Roof Robot gets 'crane' at 09:50 for 60min. Frame Robot gets 'crane' at 13:55 for 60min. Nash Equilibrium confirmed.
+
+FINAL: AGREEMENT REACHED: Roof Robot gets 'crane' at 09:50 for 60min. Frame Robot gets 'crane' at 13:55 for 60min. Nash Equilibrium confirmed.
+----------------------------------------------------------------------
+
+--- Negotiation #5 ---
+Resource: zone_b
+Parties: Roof Robot vs Frame Robot
+Resolution Time: 0.0 ms
+Used LLM: False
+Nash Allocation: Roof Robot: start=09:55, dur=60min | Frame Robot: start=13:57, dur=60min
+
+[21:23:09] Roof Robot (proposer):
+  Based on my task priority and timeline requirements, I propose we follow the Nash Bargaining allocation. This ensures a fair division of resource access time.
+
+[21:23:09] Frame Robot (responder):
+  As a high-priority agent on the critical path, I need this resource urgently. Any delay to my task cascades to all downstream operations. I accept the Nash allocation that gives me earlier access.
+
+[21:23:09] System (system):
+  AGREEMENT REACHED: Roof Robot gets 'zone_b' at 09:55 for 60min. Frame Robot gets 'zone_b' at 13:57 for 60min. Nash Equilibrium confirmed.
+
+FINAL: AGREEMENT REACHED: Roof Robot gets 'zone_b' at 09:55 for 60min. Frame Robot gets 'zone_b' at 13:57 for 60min. Nash Equilibrium confirmed.
+----------------------------------------------------------------------
+
+--- Negotiation #6 ---
+Resource: crane
+Parties: Roof Robot vs Frame Robot
+Resolution Time: 0.0 ms
+Used LLM: False
+Nash Allocation: Roof Robot: start=09:55, dur=60min | Frame Robot: start=13:57, dur=60min
+
+[21:23:09] Roof Robot (proposer):
+  Based on my task priority and timeline requirements, I propose we follow the Nash Bargaining allocation. This ensures a fair division of resource access time.
+
+[21:23:09] Frame Robot (responder):
+  As a high-priority agent on the critical path, I need this resource urgently. Any delay to my task cascades to all downstream operations. I accept the Nash allocation that gives me earlier access.
+
+[21:23:09] System (system):
+  AGREEMENT REACHED: Roof Robot gets 'crane' at 09:55 for 60min. Frame Robot gets 'crane' at 13:57 for 60min. Nash Equilibrium confirmed.
+
+FINAL: AGREEMENT REACHED: Roof Robot gets 'crane' at 09:55 for 60min. Frame Robot gets 'crane' at 13:57 for 60min. Nash Equilibrium confirmed.
+----------------------------------------------------------------------
+
+--- Negotiation #7 ---
+Resource: zone_a
+Parties: Frame Robot vs Roof Robot
+Resolution Time: 0.1 ms
+Used LLM: False
+Nash Allocation: Frame Robot: start=14:02, dur=55min | Roof Robot: start=10:05, dur=60min
+
+[21:23:09] Frame Robot (proposer):
+  As a high-priority agent on the critical path, I need this resource urgently. Any delay to my task cascades to all downstream operations. I accept the Nash allocation that gives me earlier access.
+
+[21:23:09] Roof Robot (responder):
+  As a high-priority agent on the critical path, I need this resource urgently. Any delay to my task cascades to all downstream operations. I accept the Nash allocation that gives me earlier access.
+
+[21:23:09] System (system):
+  AGREEMENT REACHED: Frame Robot gets 'zone_a' at 14:02 for 55min. Roof Robot gets 'zone_a' at 10:05 for 60min. Nash Equilibrium confirmed.
+
+FINAL: AGREEMENT REACHED: Frame Robot gets 'zone_a' at 14:02 for 55min. Roof Robot gets 'zone_a' at 10:05 for 60min. Nash Equilibrium confirmed.
+----------------------------------------------------------------------
+
+--- Negotiation #8 ---
+Resource: crane
+Parties: Frame Robot vs Roof Robot
+Resolution Time: 0.0 ms
+Used LLM: False
+Nash Allocation: Frame Robot: start=14:02, dur=55min | Roof Robot: start=10:05, dur=60min
+
+[21:23:09] Frame Robot (proposer):
+  As a high-priority agent on the critical path, I need this resource urgently. Any delay to my task cascades to all downstream operations. I accept the Nash allocation that gives me earlier access.
+
+[21:23:09] Roof Robot (responder):
+  As a high-priority agent on the critical path, I need this resource urgently. Any delay to my task cascades to all downstream operations. I accept the Nash allocation that gives me earlier access.
+
+[21:23:09] System (system):
+  AGREEMENT REACHED: Frame Robot gets 'crane' at 14:02 for 55min. Roof Robot gets 'crane' at 10:05 for 60min. Nash Equilibrium confirmed.
+
+FINAL: AGREEMENT REACHED: Frame Robot gets 'crane' at 14:02 for 55min. Roof Robot gets 'crane' at 10:05 for 60min. Nash Equilibrium confirmed.
+----------------------------------------------------------------------
+
+--- Negotiation #9 ---
+Resource: zone_a
+Parties: Frame Robot vs Roof Robot
+Resolution Time: 0.0 ms
+Used LLM: False
+Nash Allocation: Frame Robot: start=14:05, dur=55min | Roof Robot: start=10:10, dur=60min
+
+[21:23:09] Frame Robot (proposer):
+  As a high-priority agent on the critical path, I need this resource urgently. Any delay to my task cascades to all downstream operations. I accept the Nash allocation that gives me earlier access.
+
+[21:23:09] Roof Robot (responder):
+  As a high-priority agent on the critical path, I need this resource urgently. Any delay to my task cascades to all downstream operations. I accept the Nash allocation that gives me earlier access.
+
+[21:23:09] System (system):
+  AGREEMENT REACHED: Frame Robot gets 'zone_a' at 14:05 for 55min. Roof Robot gets 'zone_a' at 10:10 for 60min. Nash Equilibrium confirmed.
+
+FINAL: AGREEMENT REACHED: Frame Robot gets 'zone_a' at 14:05 for 55min. Roof Robot gets 'zone_a' at 10:10 for 60min. Nash Equilibrium confirmed.
+----------------------------------------------------------------------
+
+--- Negotiation #10 ---
+Resource: crane
+Parties: Frame Robot vs Roof Robot
+Resolution Time: 0.1 ms
+Used LLM: False
+Nash Allocation: Frame Robot: start=14:05, dur=55min | Roof Robot: start=10:10, dur=60min
+
+[21:23:09] Frame Robot (proposer):
+  As a high-priority agent on the critical path, I need this resource urgently. Any delay to my task cascades to all downstream operations. I accept the Nash allocation that gives me earlier access.
+
+[21:23:09] Roof Robot (responder):
+  As a high-priority agent on the critical path, I need this resource urgently. Any delay to my task cascades to all downstream operations. I accept the Nash allocation that gives me earlier access.
+
+[21:23:09] System (system):
+  AGREEMENT REACHED: Frame Robot gets 'crane' at 14:05 for 55min. Roof Robot gets 'crane' at 10:10 for 60min. Nash Equilibrium confirmed.
+
+FINAL: AGREEMENT REACHED: Frame Robot gets 'crane' at 14:05 for 55min. Roof Robot gets 'crane' at 10:10 for 60min. Nash Equilibrium confirmed.
+----------------------------------------------------------------------
+
+--- Negotiation #11 ---
+Resource: zone_a
+Parties: Frame Robot vs Roof Robot
+Resolution Time: 0.1 ms
+Used LLM: False
+Nash Allocation: Frame Robot: start=10:15, dur=55min | Roof Robot: start=14:07, dur=60min
+
+[21:23:09] Frame Robot (proposer):
+  As a high-priority agent on the critical path, I need this resource urgently. Any delay to my task cascades to all downstream operations. I accept the Nash allocation that gives me earlier access.
+
+[21:23:09] Roof Robot (responder):
+  As a high-priority agent on the critical path, I need this resource urgently. Any delay to my task cascades to all downstream operations. I accept the Nash allocation that gives me earlier access.
+
+[21:23:09] System (system):
+  AGREEMENT REACHED: Frame Robot gets 'zone_a' at 10:15 for 55min. Roof Robot gets 'zone_a' at 14:07 for 60min. Nash Equilibrium confirmed.
+
+FINAL: AGREEMENT REACHED: Frame Robot gets 'zone_a' at 10:15 for 55min. Roof Robot gets 'zone_a' at 14:07 for 60min. Nash Equilibrium confirmed.
+----------------------------------------------------------------------
+
+--- Negotiation #12 ---
+Resource: crane
+Parties: Frame Robot vs Roof Robot
+Resolution Time: 0.1 ms
+Used LLM: False
+Nash Allocation: Frame Robot: start=10:15, dur=55min | Roof Robot: start=14:07, dur=60min
+
+[21:23:09] Frame Robot (proposer):
+  As a high-priority agent on the critical path, I need this resource urgently. Any delay to my task cascades to all downstream operations. I accept the Nash allocation that gives me earlier access.
+
+[21:23:09] Roof Robot (responder):
+  As a high-priority agent on the critical path, I need this resource urgently. Any delay to my task cascades to all downstream operations. I accept the Nash allocation that gives me earlier access.
+
+[21:23:09] System (system):
+  AGREEMENT REACHED: Frame Robot gets 'crane' at 10:15 for 55min. Roof Robot gets 'crane' at 14:07 for 60min. Nash Equilibrium confirmed.
+
+FINAL: AGREEMENT REACHED: Frame Robot gets 'crane' at 10:15 for 55min. Roof Robot gets 'crane' at 14:07 for 60min. Nash Equilibrium confirmed.
+----------------------------------------------------------------------
+
+--- Negotiation #13 ---
+Resource: zone_a
+Parties: Frame Robot vs Roof Robot
+Resolution Time: 0.0 ms
+Used LLM: False
+Nash Allocation: Frame Robot: start=10:20, dur=55min | Roof Robot: start=14:10, dur=60min
+
+[21:23:09] Frame Robot (proposer):
+  As a high-priority agent on the critical path, I need this resource urgently. Any delay to my task cascades to all downstream operations. I accept the Nash allocation that gives me earlier access.
+
+[21:23:09] Roof Robot (responder):
+  As a high-priority agent on the critical path, I need this resource urgently. Any delay to my task cascades to all downstream operations. I accept the Nash allocation that gives me earlier access.
+
+[21:23:09] System (system):
+  AGREEMENT REACHED: Frame Robot gets 'zone_a' at 10:20 for 55min. Roof Robot gets 'zone_a' at 14:10 for 60min. Nash Equilibrium confirmed.
+
+FINAL: AGREEMENT REACHED: Frame Robot gets 'zone_a' at 10:20 for 55min. Roof Robot gets 'zone_a' at 14:10 for 60min. Nash Equilibrium confirmed.
+----------------------------------------------------------------------
+
+--- Negotiation #14 ---
+Resource: crane
+Parties: Frame Robot vs Roof Robot
+Resolution Time: 0.0 ms
+Used LLM: False
+Nash Allocation: Frame Robot: start=10:20, dur=55min | Roof Robot: start=14:10, dur=60min
+
+[21:23:09] Frame Robot (proposer):
+  As a high-priority agent on the critical path, I need this resource urgently. Any delay to my task cascades to all downstream operations. I accept the Nash allocation that gives me earlier access.
+
+[21:23:09] Roof Robot (responder):
+  As a high-priority agent on the critical path, I need this resource urgently. Any delay to my task cascades to all downstream operations. I accept the Nash allocation that gives me earlier access.
+
+[21:23:09] System (system):
+  AGREEMENT REACHED: Frame Robot gets 'crane' at 10:20 for 55min. Roof Robot gets 'crane' at 14:10 for 60min. Nash Equilibrium confirmed.
+
+FINAL: AGREEMENT REACHED: Frame Robot gets 'crane' at 10:20 for 55min. Roof Robot gets 'crane' at 14:10 for 60min. Nash Equilibrium confirmed.
+----------------------------------------------------------------------
+
+--- Negotiation #15 ---
+Resource: zone_a
+Parties: Frame Robot vs Roof Robot
+Resolution Time: 0.0 ms
+Used LLM: False
+Nash Allocation: Frame Robot: start=10:25, dur=55min | Roof Robot: start=14:12, dur=60min
+
+[21:23:09] Frame Robot (proposer):
+  As a high-priority agent on the critical path, I need this resource urgently. Any delay to my task cascades to all downstream operations. I accept the Nash allocation that gives me earlier access.
+
+[21:23:09] Roof Robot (responder):
+  As a high-priority agent on the critical path, I need this resource urgently. Any delay to my task cascades to all downstream operations. I accept the Nash allocation that gives me earlier access.
+
+[21:23:09] System (system):
+  AGREEMENT REACHED: Frame Robot gets 'zone_a' at 10:25 for 55min. Roof Robot gets 'zone_a' at 14:12 for 60min. Nash Equilibrium confirmed.
+
+FINAL: AGREEMENT REACHED: Frame Robot gets 'zone_a' at 10:25 for 55min. Roof Robot gets 'zone_a' at 14:12 for 60min. Nash Equilibrium confirmed.
+----------------------------------------------------------------------
+
+--- Negotiation #16 ---
+Resource: crane
+Parties: Frame Robot vs Roof Robot
+Resolution Time: 0.0 ms
+Used LLM: False
+Nash Allocation: Frame Robot: start=10:25, dur=55min | Roof Robot: start=14:12, dur=60min
+
+[21:23:09] Frame Robot (proposer):
+  As a high-priority agent on the critical path, I need this resource urgently. Any delay to my task cascades to all downstream operations. I accept the Nash allocation that gives me earlier access.
+
+[21:23:09] Roof Robot (responder):
+  As a high-priority agent on the critical path, I need this resource urgently. Any delay to my task cascades to all downstream operations. I accept the Nash allocation that gives me earlier access.
+
+[21:23:09] System (system):
+  AGREEMENT REACHED: Frame Robot gets 'crane' at 10:25 for 55min. Roof Robot gets 'crane' at 14:12 for 60min. Nash Equilibrium confirmed.
+
+FINAL: AGREEMENT REACHED: Frame Robot gets 'crane' at 10:25 for 55min. Roof Robot gets 'crane' at 14:12 for 60min. Nash Equilibrium confirmed.
+----------------------------------------------------------------------
+
+--- Negotiation #17 ---
+Resource: zone_b
+Parties: Roof Robot vs Frame Robot
+Resolution Time: 0.0 ms
+Used LLM: False
+Nash Allocation: Roof Robot: start=10:35, dur=60min | Frame Robot: start=14:17, dur=45min
+
+[21:23:09] Roof Robot (proposer):
+  Based on my task priority and timeline requirements, I propose we follow the Nash Bargaining allocation. This ensures a fair division of resource access time.
+
+[21:23:09] Frame Robot (responder):
+  As a high-priority agent on the critical path, I need this resource urgently. Any delay to my task cascades to all downstream operations. I accept the Nash allocation that gives me earlier access.
+
+[21:23:09] System (system):
+  AGREEMENT REACHED: Roof Robot gets 'zone_b' at 10:35 for 60min. Frame Robot gets 'zone_b' at 14:17 for 45min. Nash Equilibrium confirmed.
+
+FINAL: AGREEMENT REACHED: Roof Robot gets 'zone_b' at 10:35 for 60min. Frame Robot gets 'zone_b' at 14:17 for 45min. Nash Equilibrium confirmed.
+----------------------------------------------------------------------
+
+--- Negotiation #18 ---
+Resource: crane
+Parties: Roof Robot vs Frame Robot
+Resolution Time: 0.0 ms
+Used LLM: False
+Nash Allocation: Roof Robot: start=10:35, dur=60min | Frame Robot: start=14:17, dur=45min
+
+[21:23:09] Roof Robot (proposer):
+  Based on my task priority and timeline requirements, I propose we follow the Nash Bargaining allocation. This ensures a fair division of resource access time.
+
+[21:23:09] Frame Robot (responder):
+  As a high-priority agent on the critical path, I need this resource urgently. Any delay to my task cascades to all downstream operations. I accept the Nash allocation that gives me earlier access.
+
+[21:23:09] System (system):
+  AGREEMENT REACHED: Roof Robot gets 'crane' at 10:35 for 60min. Frame Robot gets 'crane' at 14:17 for 45min. Nash Equilibrium confirmed.
+
+FINAL: AGREEMENT REACHED: Roof Robot gets 'crane' at 10:35 for 60min. Frame Robot gets 'crane' at 14:17 for 45min. Nash Equilibrium confirmed.
+----------------------------------------------------------------------
+
+--- Negotiation #19 ---
+Resource: zone_b
+Parties: Roof Robot vs Frame Robot
+Resolution Time: 0.0 ms
+Used LLM: False
+Nash Allocation: Roof Robot: start=10:40, dur=60min | Frame Robot: start=14:20, dur=40min
+
+[21:23:09] Roof Robot (proposer):
+  Based on my task priority and timeline requirements, I propose we follow the Nash Bargaining allocation. This ensures a fair division of resource access time.
+
+[21:23:09] Frame Robot (responder):
+  As a high-priority agent on the critical path, I need this resource urgently. Any delay to my task cascades to all downstream operations. I accept the Nash allocation that gives me earlier access.
+
+[21:23:09] System (system):
+  AGREEMENT REACHED: Roof Robot gets 'zone_b' at 10:40 for 60min. Frame Robot gets 'zone_b' at 14:20 for 40min. Nash Equilibrium confirmed.
+
+FINAL: AGREEMENT REACHED: Roof Robot gets 'zone_b' at 10:40 for 60min. Frame Robot gets 'zone_b' at 14:20 for 40min. Nash Equilibrium confirmed.
+----------------------------------------------------------------------
+
+--- Negotiation #20 ---
+Resource: crane
+Parties: Roof Robot vs Frame Robot
+Resolution Time: 0.0 ms
+Used LLM: False
+Nash Allocation: Roof Robot: start=10:40, dur=60min | Frame Robot: start=14:20, dur=40min
+
+[21:23:09] Roof Robot (proposer):
+  Based on my task priority and timeline requirements, I propose we follow the Nash Bargaining allocation. This ensures a fair division of resource access time.
+
+[21:23:09] Frame Robot (responder):
+  As a high-priority agent on the critical path, I need this resource urgently. Any delay to my task cascades to all downstream operations. I accept the Nash allocation that gives me earlier access.
+
+[21:23:09] System (system):
+  AGREEMENT REACHED: Roof Robot gets 'crane' at 10:40 for 60min. Frame Robot gets 'crane' at 14:20 for 40min. Nash Equilibrium confirmed.
+
+FINAL: AGREEMENT REACHED: Roof Robot gets 'crane' at 10:40 for 60min. Frame Robot gets 'crane' at 14:20 for 40min. Nash Equilibrium confirmed.
+----------------------------------------------------------------------
+
+--- Negotiation #21 ---
+Resource: zone_b
+Parties: Roof Robot vs Frame Robot
+Resolution Time: 0.0 ms
+Used LLM: False
+Nash Allocation: Roof Robot: start=10:45, dur=60min | Frame Robot: start=14:22, dur=35min
+
+[21:23:09] Roof Robot (proposer):
+  Based on my task priority and timeline requirements, I propose we follow the Nash Bargaining allocation. This ensures a fair division of resource access time.
+
+[21:23:09] Frame Robot (responder):
+  As a high-priority agent on the critical path, I need this resource urgently. Any delay to my task cascades to all downstream operations. I accept the Nash allocation that gives me earlier access.
+
+[21:23:09] System (system):
+  AGREEMENT REACHED: Roof Robot gets 'zone_b' at 10:45 for 60min. Frame Robot gets 'zone_b' at 14:22 for 35min. Nash Equilibrium confirmed.
+
+FINAL: AGREEMENT REACHED: Roof Robot gets 'zone_b' at 10:45 for 60min. Frame Robot gets 'zone_b' at 14:22 for 35min. Nash Equilibrium confirmed.
+----------------------------------------------------------------------
+
+--- Negotiation #22 ---
+Resource: crane
+Parties: Roof Robot vs Frame Robot
+Resolution Time: 0.0 ms
+Used LLM: False
+Nash Allocation: Roof Robot: start=10:45, dur=60min | Frame Robot: start=14:22, dur=35min
+
+[21:23:09] Roof Robot (proposer):
+  Based on my task priority and timeline requirements, I propose we follow the Nash Bargaining allocation. This ensures a fair division of resource access time.
+
+[21:23:09] Frame Robot (responder):
+  As a high-priority agent on the critical path, I need this resource urgently. Any delay to my task cascades to all downstream operations. I accept the Nash allocation that gives me earlier access.
+
+[21:23:09] System (system):
+  AGREEMENT REACHED: Roof Robot gets 'crane' at 10:45 for 60min. Frame Robot gets 'crane' at 14:22 for 35min. Nash Equilibrium confirmed.
+
+FINAL: AGREEMENT REACHED: Roof Robot gets 'crane' at 10:45 for 60min. Frame Robot gets 'crane' at 14:22 for 35min. Nash Equilibrium confirmed.
+----------------------------------------------------------------------
+
+--- Negotiation #23 ---
+Resource: zone_b
+Parties: Roof Robot vs Frame Robot
+Resolution Time: 0.0 ms
+Used LLM: False
+Nash Allocation: Roof Robot: start=10:50, dur=60min | Frame Robot: start=14:25, dur=30min
+
+[21:23:09] Roof Robot (proposer):
+  Based on my task priority and timeline requirements, I propose we follow the Nash Bargaining allocation. This ensures a fair division of resource access time.
+
+[21:23:09] Frame Robot (responder):
+  As a high-priority agent on the critical path, I need this resource urgently. Any delay to my task cascades to all downstream operations. I accept the Nash allocation that gives me earlier access.
+
+[21:23:09] System (system):
+  AGREEMENT REACHED: Roof Robot gets 'zone_b' at 10:50 for 60min. Frame Robot gets 'zone_b' at 14:25 for 30min. Nash Equilibrium confirmed.
+
+FINAL: AGREEMENT REACHED: Roof Robot gets 'zone_b' at 10:50 for 60min. Frame Robot gets 'zone_b' at 14:25 for 30min. Nash Equilibrium confirmed.
+----------------------------------------------------------------------
+
+--- Negotiation #24 ---
+Resource: crane
+Parties: Roof Robot vs Frame Robot
+Resolution Time: 0.0 ms
+Used LLM: False
+Nash Allocation: Roof Robot: start=10:50, dur=60min | Frame Robot: start=14:25, dur=30min
+
+[21:23:09] Roof Robot (proposer):
+  Based on my task priority and timeline requirements, I propose we follow the Nash Bargaining allocation. This ensures a fair division of resource access time.
+
+[21:23:09] Frame Robot (responder):
+  As a high-priority agent on the critical path, I need this resource urgently. Any delay to my task cascades to all downstream operations. I accept the Nash allocation that gives me earlier access.
+
+[21:23:09] System (system):
+  AGREEMENT REACHED: Roof Robot gets 'crane' at 10:50 for 60min. Frame Robot gets 'crane' at 14:25 for 30min. Nash Equilibrium confirmed.
+
+FINAL: AGREEMENT REACHED: Roof Robot gets 'crane' at 10:50 for 60min. Frame Robot gets 'crane' at 14:25 for 30min. Nash Equilibrium confirmed.
+----------------------------------------------------------------------
+
+--- Negotiation #25 ---
+Resource: zone_b
+Parties: Roof Robot vs Frame Robot
+Resolution Time: 0.0 ms
+Used LLM: False
+Nash Allocation: Roof Robot: start=10:55, dur=60min | Frame Robot: start=14:27, dur=25min
+
+[21:23:09] Roof Robot (proposer):
+  Based on my task priority and timeline requirements, I propose we follow the Nash Bargaining allocation. This ensures a fair division of resource access time.
+
+[21:23:09] Frame Robot (responder):
+  As a high-priority agent on the critical path, I need this resource urgently. Any delay to my task cascades to all downstream operations. I accept the Nash allocation that gives me earlier access.
+
+[21:23:09] System (system):
+  AGREEMENT REACHED: Roof Robot gets 'zone_b' at 10:55 for 60min. Frame Robot gets 'zone_b' at 14:27 for 25min. Nash Equilibrium confirmed.
+
+FINAL: AGREEMENT REACHED: Roof Robot gets 'zone_b' at 10:55 for 60min. Frame Robot gets 'zone_b' at 14:27 for 25min. Nash Equilibrium confirmed.
+----------------------------------------------------------------------
+
+--- Negotiation #26 ---
+Resource: crane
+Parties: Roof Robot vs Frame Robot
+Resolution Time: 0.0 ms
+Used LLM: False
+Nash Allocation: Roof Robot: start=10:55, dur=60min | Frame Robot: start=14:27, dur=25min
+
+[21:23:09] Roof Robot (proposer):
+  Based on my task priority and timeline requirements, I propose we follow the Nash Bargaining allocation. This ensures a fair division of resource access time.
+
+[21:23:09] Frame Robot (responder):
+  As a high-priority agent on the critical path, I need this resource urgently. Any delay to my task cascades to all downstream operations. I accept the Nash allocation that gives me earlier access.
+
+[21:23:09] System (system):
+  AGREEMENT REACHED: Roof Robot gets 'crane' at 10:55 for 60min. Frame Robot gets 'crane' at 14:27 for 25min. Nash Equilibrium confirmed.
+
+FINAL: AGREEMENT REACHED: Roof Robot gets 'crane' at 10:55 for 60min. Frame Robot gets 'crane' at 14:27 for 25min. Nash Equilibrium confirmed.
+----------------------------------------------------------------------
+
+--- Negotiation #27 ---
+Resource: zone_a
+Parties: Frame Robot vs Roof Robot
+Resolution Time: 0.1 ms
+Used LLM: False
+Nash Allocation: Frame Robot: start=14:32, dur=20min | Roof Robot: start=11:05, dur=60min
+
+[21:23:09] Frame Robot (proposer):
+  As a high-priority agent on the critical path, I need this resource urgently. Any delay to my task cascades to all downstream operations. I accept the Nash allocation that gives me earlier access.
+
+[21:23:09] Roof Robot (responder):
+  As a high-priority agent on the critical path, I need this resource urgently. Any delay to my task cascades to all downstream operations. I accept the Nash allocation that gives me earlier access.
+
+[21:23:09] System (system):
+  AGREEMENT REACHED: Frame Robot gets 'zone_a' at 14:32 for 20min. Roof Robot gets 'zone_a' at 11:05 for 60min. Nash Equilibrium confirmed.
+
+FINAL: AGREEMENT REACHED: Frame Robot gets 'zone_a' at 14:32 for 20min. Roof Robot gets 'zone_a' at 11:05 for 60min. Nash Equilibrium confirmed.
+----------------------------------------------------------------------
+
+--- Negotiation #28 ---
+Resource: crane
+Parties: Frame Robot vs Roof Robot
+Resolution Time: 0.0 ms
+Used LLM: False
+Nash Allocation: Frame Robot: start=14:32, dur=20min | Roof Robot: start=11:05, dur=60min
+
+[21:23:09] Frame Robot (proposer):
+  As a high-priority agent on the critical path, I need this resource urgently. Any delay to my task cascades to all downstream operations. I accept the Nash allocation that gives me earlier access.
+
+[21:23:09] Roof Robot (responder):
+  As a high-priority agent on the critical path, I need this resource urgently. Any delay to my task cascades to all downstream operations. I accept the Nash allocation that gives me earlier access.
+
+[21:23:09] System (system):
+  AGREEMENT REACHED: Frame Robot gets 'crane' at 14:32 for 20min. Roof Robot gets 'crane' at 11:05 for 60min. Nash Equilibrium confirmed.
+
+FINAL: AGREEMENT REACHED: Frame Robot gets 'crane' at 14:32 for 20min. Roof Robot gets 'crane' at 11:05 for 60min. Nash Equilibrium confirmed.
+----------------------------------------------------------------------
+
+--- Negotiation #29 ---
+Resource: zone_a
+Parties: Frame Robot vs Roof Robot
+Resolution Time: 0.1 ms
+Used LLM: False
+Nash Allocation: Frame Robot: start=11:10, dur=20min | Roof Robot: start=14:35, dur=60min
+
+[21:23:09] Frame Robot (proposer):
+  As a high-priority agent on the critical path, I need this resource urgently. Any delay to my task cascades to all downstream operations. I accept the Nash allocation that gives me earlier access.
+
+[21:23:09] Roof Robot (responder):
+  As a high-priority agent on the critical path, I need this resource urgently. Any delay to my task cascades to all downstream operations. I accept the Nash allocation that gives me earlier access.
+
+[21:23:09] System (system):
+  AGREEMENT REACHED: Frame Robot gets 'zone_a' at 11:10 for 20min. Roof Robot gets 'zone_a' at 14:35 for 60min. Nash Equilibrium confirmed.
+
+FINAL: AGREEMENT REACHED: Frame Robot gets 'zone_a' at 11:10 for 20min. Roof Robot gets 'zone_a' at 14:35 for 60min. Nash Equilibrium confirmed.
+----------------------------------------------------------------------
+
+--- Negotiation #30 ---
+Resource: crane
+Parties: Frame Robot vs Roof Robot
+Resolution Time: 0.1 ms
+Used LLM: False
+Nash Allocation: Frame Robot: start=11:10, dur=20min | Roof Robot: start=14:35, dur=60min
+
+[21:23:09] Frame Robot (proposer):
+  As a high-priority agent on the critical path, I need this resource urgently. Any delay to my task cascades to all downstream operations. I accept the Nash allocation that gives me earlier access.
+
+[21:23:09] Roof Robot (responder):
+  As a high-priority agent on the critical path, I need this resource urgently. Any delay to my task cascades to all downstream operations. I accept the Nash allocation that gives me earlier access.
+
+[21:23:09] System (system):
+  AGREEMENT REACHED: Frame Robot gets 'crane' at 11:10 for 20min. Roof Robot gets 'crane' at 14:35 for 60min. Nash Equilibrium confirmed.
+
+FINAL: AGREEMENT REACHED: Frame Robot gets 'crane' at 11:10 for 20min. Roof Robot gets 'crane' at 14:35 for 60min. Nash Equilibrium confirmed.
+----------------------------------------------------------------------
+
+--- Negotiation #31 ---
+Resource: zone_a
+Parties: Frame Robot vs Roof Robot
+Resolution Time: 0.0 ms
+Used LLM: False
+Nash Allocation: Frame Robot: start=14:37, dur=20min | Roof Robot: start=11:15, dur=60min
+
+[21:23:09] Frame Robot (proposer):
+  As a high-priority agent on the critical path, I need this resource urgently. Any delay to my task cascades to all downstream operations. I accept the Nash allocation that gives me earlier access.
+
+[21:23:09] Roof Robot (responder):
+  As a high-priority agent on the critical path, I need this resource urgently. Any delay to my task cascades to all downstream operations. I accept the Nash allocation that gives me earlier access.
+
+[21:23:09] System (system):
+  AGREEMENT REACHED: Frame Robot gets 'zone_a' at 14:37 for 20min. Roof Robot gets 'zone_a' at 11:15 for 60min. Nash Equilibrium confirmed.
+
+FINAL: AGREEMENT REACHED: Frame Robot gets 'zone_a' at 14:37 for 20min. Roof Robot gets 'zone_a' at 11:15 for 60min. Nash Equilibrium confirmed.
+----------------------------------------------------------------------
+
+--- Negotiation #32 ---
+Resource: crane
+Parties: Frame Robot vs Roof Robot
+Resolution Time: 0.0 ms
+Used LLM: False
+Nash Allocation: Frame Robot: start=14:37, dur=20min | Roof Robot: start=11:15, dur=60min
+
+[21:23:09] Frame Robot (proposer):
+  As a high-priority agent on the critical path, I need this resource urgently. Any delay to my task cascades to all downstream operations. I accept the Nash allocation that gives me earlier access.
+
+[21:23:09] Roof Robot (responder):
+  As a high-priority agent on the critical path, I need this resource urgently. Any delay to my task cascades to all downstream operations. I accept the Nash allocation that gives me earlier access.
+
+[21:23:09] System (system):
+  AGREEMENT REACHED: Frame Robot gets 'crane' at 14:37 for 20min. Roof Robot gets 'crane' at 11:15 for 60min. Nash Equilibrium confirmed.
+
+FINAL: AGREEMENT REACHED: Frame Robot gets 'crane' at 14:37 for 20min. Roof Robot gets 'crane' at 11:15 for 60min. Nash Equilibrium confirmed.
+----------------------------------------------------------------------
+
+--- Negotiation #33 ---
+Resource: ALL
+Parties: Frame Robot vs ALL
+Resolution Time: 0.0 ms
+Used LLM: False
+Nash Allocation: Disruption — recalculating...
+
+[21:23:09] Frame Robot (system):
+  DISRUPTION ALERT: Steel materials delivery delayed by 2 hours. I (Frame Robot) am releasing held resources. All agents must renegotiate schedules immediately.
+
+FINAL: Renegotiation triggered
+----------------------------------------------------------------------
+
+--- Negotiation #34 ---
+Resource: shared_resources
+Parties: Frame Robot vs Roof Robot
+Resolution Time: 0.1 ms
+Used LLM: False
+Nash Allocation: Frame Robot: start=13:20, dur=20min | Roof Robot: start=13:50, dur=0min
+
+[21:23:09] Frame Robot (proposer):
+  As a high-priority agent on the critical path, I need this resource urgently. Any delay to my task cascades to all downstream operations. I accept the Nash allocation that gives me earlier access.
+
+[21:23:09] Roof Robot (responder):
+  As a high-priority agent on the critical path, I need this resource urgently. Any delay to my task cascades to all downstream operations. I accept the Nash allocation that gives me earlier access.
+
+[21:23:09] System (system):
+  AGREEMENT REACHED: Frame Robot gets 'shared_resources' at 13:20 for 20min. Roof Robot gets 'shared_resources' at 13:50 for 0min. Nash Equilibrium confirmed.
+
+FINAL: AGREEMENT REACHED: Frame Robot gets 'shared_resources' at 13:20 for 20min. Roof Robot gets 'shared_resources' at 13:50 for 0min. Nash Equilibrium confirmed.
+----------------------------------------------------------------------
+
+--- Negotiation #35 ---
+Resource: shared_resources
+Parties: Frame Robot vs Electrical Robot
+Resolution Time: 0.0 ms
+Used LLM: False
+Nash Allocation: Frame Robot: start=13:20, dur=20min | Electrical Robot: start=13:50, dur=15min
+
+[21:23:09] Frame Robot (proposer):
+  As a high-priority agent on the critical path, I need this resource urgently. Any delay to my task cascades to all downstream operations. I accept the Nash allocation that gives me earlier access.
+
+[21:23:09] Electrical Robot (responder):
+  As a high-priority agent on the critical path, I need this resource urgently. Any delay to my task cascades to all downstream operations. I accept the Nash allocation that gives me earlier access.
+
+[21:23:09] System (system):
+  AGREEMENT REACHED: Frame Robot gets 'shared_resources' at 13:20 for 20min. Electrical Robot gets 'shared_resources' at 13:50 for 15min. Nash Equilibrium confirmed.
+
+FINAL: AGREEMENT REACHED: Frame Robot gets 'shared_resources' at 13:20 for 20min. Electrical Robot gets 'shared_resources' at 13:50 for 15min. Nash Equilibrium confirmed.
+----------------------------------------------------------------------
+
+--- Negotiation #36 ---
+Resource: shared_resources
+Parties: Roof Robot vs Electrical Robot
+Resolution Time: 0.0 ms
+Used LLM: False
+Nash Allocation: Roof Robot: start=13:20, dur=0min | Electrical Robot: start=13:50, dur=15min
+
+[21:23:09] Roof Robot (proposer):
+  Given the material delay disruption, I recognize we need to renegotiate. I am releasing my current resources and request priority based on updated urgency scores. Let us find a new optimal allocation.
+
+[21:23:09] Electrical Robot (responder):
+  I understand the mathematical fairness of this allocation. While I would prefer earlier access, the Nash solution ensures both agents can complete their tasks. I agree to the proposed schedule.
+
+[21:23:09] System (system):
+  AGREEMENT REACHED: Roof Robot gets 'shared_resources' at 13:20 for 0min. Electrical Robot gets 'shared_resources' at 13:50 for 15min. Nash Equilibrium confirmed.
+
+FINAL: AGREEMENT REACHED: Roof Robot gets 'shared_resources' at 13:20 for 0min. Electrical Robot gets 'shared_resources' at 13:50 for 15min. Nash Equilibrium confirmed.
+----------------------------------------------------------------------
+
