@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Construction Robotics Negotiation Dashboard</title>
+  <style>
+    :root {
+      --bg: #0b1220;
+      --panel: #121b2d;
+      --panel-2: #18243a;
+      --text: #e7edf7;
+      --muted: #9fb0ca;
+      --accent: #68b3ff;
+      --accent-2: #7cf3c9;
+      --warn: #ffbf69;
+      --danger: #ff6b6b;
+      --border: rgba(255,255,255,0.08);
+      --shadow: 0 12px 30px rgba(0,0,0,0.25);
+      --radius: 20px;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, Segoe UI, Roboto, Arial, sans-serif;
+      background: linear-gradient(180deg, #08101c 0%, #0d1425 100%);
+      color: var(--text);
+    }
+
+    .wrap {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 24px;
+    }
+
+    .hero {
+      background: radial-gradient(circle at top right, rgba(104,179,255,.15), transparent 30%),
+                  radial-gradient(circle at top left, rgba(124,243,201,.12), transparent 25%),
+                  var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      padding: 28px;
+      box-shadow: var(--shadow);
+      margin-bottom: 18px;
+    }
+
+    .hero h1 {
+      margin: 0 0 10px;
+      font-size: 34px;
+      line-height: 1.15;
+    }
+
+    .hero p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.6;
+      max-width: 900px;
+    }
+
+    .toolbar {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+      align-items: center;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border);
+      color: var(--text);
+      border-radius: 999px;
+      padding: 8px 14px;
+      font-size: 13px;
+    }
+
+    select, input[type="range"] {
+      width: 100%;
+    }
+
+    select {
+      background: var(--panel-2);
+      color: var(--text);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 10px 12px;
+      font-size: 14px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 18px;
+      box-shadow: var(--shadow);
+    }
+
+    .card h2, .card h3 {
+      margin: 0 0 14px;
+      font-weight: 700;
+    }
+
+    .card h2 { font-size: 20px; }
+    .card h3 { font-size: 16px; }
+
+    .sub {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.5;
+      margin-top: -6px;
+      margin-bottom: 14px;
+    }
+
+    .span-12 { grid-column: span 12; }
+    .span-8 { grid-column: span 8; }
+    .span-7 { grid-column: span 7; }
+    .span-6 { grid-column: span 6; }
+    .span-5 { grid-column: span 5; }
+    .span-4 { grid-column: span 4; }
+    .span-3 { grid-column: span 3; }
+
+    .kpis {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 14px;
+    }
+
+    .kpi {
+      background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 16px;
+      min-height: 110px;
+    }
+
+    .kpi .label {
+      color: var(--muted);
+      font-size: 12px;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+    }
+
+    .kpi .value {
+      font-size: 30px;
+      font-weight: 800;
+      margin-bottom: 6px;
+    }
+
+    .kpi .help {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 14px;
+    }
+
+    .step {
+      position: relative;
+      background: var(--panel-2);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 16px;
+      min-height: 160px;
+    }
+
+    .step .num {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      background: rgba(104,179,255,0.15);
+      color: var(--accent);
+      border: 1px solid rgba(104,179,255,0.25);
+      margin-bottom: 12px;
+    }
+
+    .step p { color: var(--muted); font-size: 13px; line-height: 1.55; margin: 8px 0 0; }
+
+    .bar-group {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-top: 8px;
+    }
+
+    .bar-row {
+      display: grid;
+      grid-template-columns: 210px 1fr 80px;
+      gap: 14px;
+      align-items: center;
+    }
+
+    .bar-row .name {
+      font-size: 14px;
+    }
+
+    .bar-track {
+      width: 100%;
+      height: 16px;
+      background: rgba(255,255,255,0.06);
+      border-radius: 999px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .bar-fill {
+      height: 100%;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+    }
+
+    .bar-fill.warn { background: linear-gradient(90deg, var(--warn), #ffd6a5); }
+    .bar-fill.danger { background: linear-gradient(90deg, var(--danger), #ff9f9f); }
+
+    .mini-note { color: var(--muted); font-size: 12px; margin-top: 12px; line-height: 1.5; }
+
+    .scenario-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .scenario-card {
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 16px;
+      background: var(--panel-2);
+    }
+
+    .scenario-card.active {
+      outline: 2px solid rgba(104,179,255,0.45);
+      transform: translateY(-1px);
+    }
+
+    .scenario-card .title { font-size: 15px; font-weight: 700; margin-bottom: 12px; }
+    .metric-line {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 7px 0;
+      border-bottom: 1px dashed rgba(255,255,255,0.07);
+      font-size: 13px;
+    }
+    .metric-line:last-child { border-bottom: 0; }
+    .metric-line span:last-child { color: var(--accent-2); font-weight: 700; }
+
+    .timeline {
+      overflow-x: auto;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      background: linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01));
+      padding: 14px;
+    }
+
+    .timeline-inner {
+      min-width: 980px;
+    }
+
+    .time-scale {
+      position: relative;
+      height: 34px;
+      margin-left: 160px;
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+
+    .tick {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 1px;
+      background: rgba(255,255,255,0.08);
+    }
+
+    .tick-label {
+      position: absolute;
+      top: 6px;
+      transform: translateX(-50%);
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    .lane {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .lane-label {
+      width: 148px;
+      font-size: 13px;
+      color: var(--text);
+    }
+
+    .lane-track {
+      position: relative;
+      height: 34px;
+      flex: 1;
+      background: rgba(255,255,255,0.04);
+      border-radius: 999px;
+      overflow: hidden;
+    }
+
+    .task-bar {
+      position: absolute;
+      height: 24px;
+      top: 5px;
+      border-radius: 999px;
+      display: flex;
+      align-items: center;
+      padding: 0 10px;
+      font-size: 11px;
+      font-weight: 700;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      color: #08101c;
+    }
+
+    .task-normal { background: linear-gradient(90deg, #7cf3c9, #afffe5); }
+    .task-wait { background: linear-gradient(90deg, #68b3ff, #bddcff); }
+    .task-disruption { background: linear-gradient(90deg, #ffbf69, #ffe1b3); }
+
+    .event-band {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      background: rgba(255,107,107,0.14);
+      border-left: 2px solid rgba(255,107,107,0.7);
+      border-right: 2px solid rgba(255,107,107,0.7);
+      pointer-events: none;
+    }
+
+    .legend {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 12px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .legend .dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      display: inline-block;
+      margin-right: 6px;
+      vertical-align: middle;
+    }
+
+    .panel-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .conflict-box {
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: var(--panel-2);
+      padding: 14px;
+    }
+
+    .conflict-title {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: center;
+      margin-bottom: 10px;
+      flex-wrap: wrap;
+    }
+
+    .badge {
+      display: inline-flex;
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      background: rgba(104,179,255,0.12);
+      color: var(--accent);
+      border: 1px solid rgba(104,179,255,0.25);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+    }
+
+    th, td {
+      text-align: left;
+      padding: 10px 8px;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    th { color: var(--muted); font-weight: 600; }
+
+    .winner-row td {
+      background: rgba(124,243,201,0.08);
+    }
+
+    .winner-label {
+      color: var(--accent-2);
+      font-weight: 700;
+    }
+
+    .explanation {
+      color: var(--text);
+      line-height: 1.65;
+      font-size: 14px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 14px;
+    }
+
+    .footer-note {
+      color: var(--muted);
+      text-align: center;
+      font-size: 13px;
+      padding: 18px 0 6px;
+    }
+
+    @media (max-width: 1100px) {
+      .kpis { grid-template-columns: repeat(3, 1fr); }
+      .steps { grid-template-columns: 1fr 1fr; }
+      .scenario-cards { grid-template-columns: 1fr; }
+      .span-8, .span-7, .span-6, .span-5, .span-4, .span-3 { grid-column: span 12; }
+    }
+
+    @media (max-width: 700px) {
+      .wrap { padding: 14px; }
+      .hero h1 { font-size: 28px; }
+      .kpis { grid-template-columns: 1fr 1fr; }
+      .steps { grid-template-columns: 1fr; }
+      .bar-row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <section class="hero">
+      <h1>Construction Robotics Negotiation Dashboard</h1>
+      <p>
+        A visual explanation of how the project operates: agents compete for shared resources,
+        Nash-style priority scoring resolves the conflict, and the LLM adds explainable reasoning
+        for why one robot or task gets the resource first.
+      </p>
+      <div class="toolbar">
+        <span class="pill">3 Scenarios Compared</span>
+        <span class="pill">Conflict + Disruption Aware</span>
+        <span class="pill">Interactive Decision Explorer</span>
+        <span class="pill">Single-file HTML Dashboard</span>
+      </div>
+    </section>
+
+    <section class="card span-12">
+      <h2>Project Overview</h2>
+      <p class="sub">
+        This dashboard is designed so that a viewer can understand the entire operating logic without opening the Python source code.
+        It combines scenario KPIs, the decision pipeline, an operational timeline, and an explanation viewer for each negotiation event.
+      </p>
+      <div class="kpis" id="kpiGrid"></div>
+    </section>
+
+    <div class="grid">
+      <section class="card span-12">
+        <h2>How the System Operates</h2>
+        <p class="sub">This is the core operating sequence of the project.</p>
+        <div class="steps">
+          <div class="step">
+            <div class="num">1</div>
+            <h3>Tasks Become Ready</h3>
+            <p>Robots such as Frame, Roof, and Electrical move into a ready state when dependency thresholds are satisfied.</p>
+          </div>
+          <div class="step">
+            <div class="num">2</div>
+            <h3>Resource Conflict Appears</h3>
+            <p>Two or more tasks request the same scarce resource like the crane or work zone at the same simulation minute.</p>
+          </div>
+          <div class="step">
+            <div class="num">3</div>
+            <h3>Nash Score Is Computed</h3>
+            <p>The system scores each candidate using criticality, downstream pressure, waiting time, and schedule impact.</p>
+          </div>
+          <div class="step">
+            <div class="num">4</div>
+            <h3>Winner Is Chosen</h3>
+            <p>The highest-priority task receives the contested resource. Others are deferred and the schedule is updated.</p>
+          </div>
+          <div class="step">
+            <div class="num">5</div>
+            <h3>LLM Explains the Decision</h3>
+            <p>The LLM does not need to choose the winner. It can explain why the chosen allocation protects the critical path.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="card span-7">
+        <h2>Scenario Comparison</h2>
+        <p class="sub">These are the headline results from your simulation run.</p>
+        <div class="scenario-cards" id="scenarioCards"></div>
+      </section>
+
+      <section class="card span-5">
+        <h2>Scenario Selector</h2>
+        <p class="sub">Choose a scenario to update the timeline and resource views below.</p>
+        <select id="scenarioSelect"></select>
+        <div class="mini-note" id="scenarioSummary"></div>
+      </section>
+
+      <section class="card span-6">
+        <h2>Completion Time</h2>
+        <p class="sub">Lower is better. Faster completion indicates better coordination under shared-resource constraints.</p>
+        <div class="bar-group" id="completionBars"></div>
+      </section>
+
+      <section class="card span-6">
+        <h2>Recovery + Stability</h2>
+        <p class="sub">Recovery reflects disruption impact. Stability reflects how much of the plan survives after disturbance.</p>
+        <div class="bar-group" id="recoveryBars"></div>
+      </section>
+
+      <section class="card span-12">
+        <h2>Operational Timeline</h2>
+        <p class="sub">
+          A viewer can see how the schedule evolves, when disruption happens, and which robot or task is active at each stage.
+        </p>
+        <div class="timeline">
+          <div class="timeline-inner" id="timelineRoot"></div>
+        </div>
+        <div class="legend">
+          <span><span class="dot" style="background:#7cf3c9"></span>Active task</span>
+          <span><span class="dot" style="background:#68b3ff"></span>Queued / waiting / resumed</span>
+          <span><span class="dot" style="background:#ffbf69"></span>Disruption or forced pause</span>
+          <span><span class="dot" style="background:rgba(255,107,107,.7)"></span>Disruption window</span>
+        </div>
+      </section>
+
+      <section class="card span-5">
+        <h2>Resource Utilization</h2>
+        <p class="sub">This shows where contention comes from and which resources behave as bottlenecks.</p>
+        <div class="bar-group" id="resourceBars"></div>
+      </section>
+
+      <section class="card span-7">
+        <h2>Negotiation Explorer</h2>
+        <p class="sub">Move through conflict events to show how the system explains individual allocation decisions.</p>
+        <div class="panel-stack">
+          <div>
+            <label for="conflictRange" class="mini-note">Conflict Event</label>
+            <input id="conflictRange" type="range" min="0" max="0" value="0" />
+          </div>
+          <div class="conflict-box">
+            <div class="conflict-title">
+              <div>
+                <strong id="conflictHeading">Conflict at t=105</strong><br />
+                <span class="mini-note" id="conflictMeta"></span>
+              </div>
+              <span class="badge" id="conflictWinnerBadge"></span>
+            </div>
+            <table>
+              <thead>
+                <tr>
+                  <th>Task</th>
+                  <th>Score</th>
+                  <th>Criticality</th>
+                  <th>Waiting</th>
+                  <th>Duration</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody id="conflictTable"></tbody>
+            </table>
+          </div>
+          <div class="explanation" id="conflictExplanation"></div>
+        </div>
+      </section>
+    </div>
+
+    <div class="footer-note">
+      Replace the JavaScript data object with values loaded from your Python results files to turn this mockup into a live dashboard.
+    </div>
+  </div>
+
+  <script>
+    const dashboardData = {
+      overview: {
+        title: "Multi-Agent LLM Negotiation for Construction Robotics",
+        bestScenario: "Nash + LLM Negotiation",
+        improvement: 12.0,
+        llmCalls: 70,
+        disruptionWindow: "t=200 to t=320",
+        explanationMode: "Live LLM reasoning or rule-based fallback"
+      },
+      scenarios: {
+        baseline: {
+          label: "Baseline (FCFS)",
+          completion: 340,
+          conflicts: 16,
+          avgResolutionMs: 0.0,
+          recovery: 120,
+          stability: 47.8,
+          resourceUtilization: { crane: 52.5, zone_a: 52.5, zone_b: 20.0, zone_c: 0.0 },
+          summary: "First-come-first-served. No intelligent negotiation. Highest completion time and weakest schedule stability.",
+          timeline: [
+            { lane: "Frame Robot", type: "task-normal", start: 0, end: 200, label: "Frame Build" },
+            { lane: "Frame Robot", type: "task-disruption", start: 200, end: 320, label: "Materials Delay" },
+            { lane: "Frame Robot", type: "task-wait", start: 320, end: 340, label: "Resume" },
+            { lane: "Roof Robot", type: "task-wait", start: 105, end: 295, label: "Roof Work" },
+            { lane: "Electrical Robot", type: "task-normal", start: 215, end: 335, label: "Electrical Work" }
+          ]
+        },
+        nash_only: {
+          label: "Nash Bargaining Only",
+          completion: 313,
+          conflicts: 32,
+          avgResolutionMs: 6.1,
+          recovery: 120,
+          stability: 57.8,
+          resourceUtilization: { crane: 52.5, zone_a: 52.5, zone_b: 20.0, zone_c: 0.0 },
+          summary: "Priority-based conflict resolution without language generation. Better protection of critical work packages.",
+          timeline: [
+            { lane: "Frame Robot", type: "task-normal", start: 0, end: 200, label: "Frame Build" },
+            { lane: "Frame Robot", type: "task-disruption", start: 200, end: 320, label: "Materials Delay" },
+            { lane: "Frame Robot", type: "task-wait", start: 320, end: 340, label: "Resume" },
+            { lane: "Roof Robot", type: "task-wait", start: 105, end: 268, label: "Roof Work" },
+            { lane: "Electrical Robot", type: "task-normal", start: 205, end: 295, label: "Electrical Work" }
+          ]
+        },
+        nash_llm: {
+          label: "Nash + LLM Negotiation",
+          completion: 299,
+          conflicts: 32,
+          avgResolutionMs: 8.6,
+          recovery: 120,
+          stability: 65.8,
+          resourceUtilization: { crane: 52.5, zone_a: 52.5, zone_b: 20.0, zone_c: 0.0 },
+          summary: "Nash-style selection plus explainable negotiation reasoning. Best overall completion and strongest stability.",
+          timeline: [
+            { lane: "Frame Robot", type: "task-normal", start: 0, end: 200, label: "Frame Build" },
+            { lane: "Frame Robot", type: "task-disruption", start: 200, end: 320, label: "Materials Delay" },
+            { lane: "Frame Robot", type: "task-wait", start: 320, end: 340, label: "Resume" },
+            { lane: "Roof Robot", type: "task-wait", start: 105, end: 250, label: "Roof Work" },
+            { lane: "Electrical Robot", type: "task-normal", start: 195, end: 299, label: "Electrical Work" }
+          ]
+        }
+      },
+      conflicts: [
+        {
+          time: 105,
+          resource: "crane",
+          scenario: "nash_llm",
+          winner: "Roof Robot",
+          explanation: "Roof Robot received the crane because its allocation produced a better downstream schedule impact while the frame package had already progressed far enough to tolerate short deferment. The decision protected future work activation and reduced cascading delay risk.",
+          candidates: [
+            { name: "Roof Robot", score: 4.92, criticality: 1.90, waiting: 0, duration: 70, winner: true },
+            { name: "Frame Robot", score: 4.41, criticality: 1.70, waiting: 0, duration: 95, winner: false }
+          ]
+        },
+        {
+          time: 125,
+          resource: "zone_a",
+          scenario: "nash_llm",
+          winner: "Frame Robot",
+          explanation: "Frame Robot was prioritized because it remained the more critical structural path item at that point in the build. Granting zone access to the frame work limited total project delay and supported later dependency activation.",
+          candidates: [
+            { name: "Frame Robot", score: 5.03, criticality: 2.00, waiting: 20, duration: 60, winner: true },
+            { name: "Roof Robot", score: 4.48, criticality: 1.80, waiting: 15, duration: 55, winner: false }
+          ]
+        },
+        {
+          time: 155,
+          resource: "zone_a",
+          scenario: "nash_llm",
+          winner: "Roof Robot",
+          explanation: "Roof Robot became the stronger candidate once waiting time and downstream risk were combined. The allocation balanced fairness with project acceleration by preventing repeated starvation of the roof package.",
+          candidates: [
+            { name: "Roof Robot", score: 5.11, criticality: 1.95, waiting: 30, duration: 50, winner: true },
+            { name: "Frame Robot", score: 4.77, criticality: 1.85, waiting: 10, duration: 55, winner: false }
+          ]
+        },
+        {
+          time: 190,
+          resource: "zone_b",
+          scenario: "nash_llm",
+          winner: "Frame Robot",
+          explanation: "Frame Robot regained priority because the structural package was still dominating critical-path risk immediately before disruption. The decision reduced the chance of a larger idle window after the materials delay event.",
+          candidates: [
+            { name: "Frame Robot", score: 5.36, criticality: 2.10, waiting: 25, duration: 45, winner: true },
+            { name: "Roof Robot", score: 4.71, criticality: 1.78, waiting: 20, duration: 45, winner: false }
+          ]
+        },
+        {
+          time: 215,
+          resource: "zone_b",
+          scenario: "nash_llm",
+          winner: "Electrical Robot",
+          explanation: "After the disruption, Electrical Robot became the most useful allocation because it could continue progress while the structural package was paused by delayed materials. This choice improved resilience by converting disruption time into productive work.",
+          candidates: [
+            { name: "Electrical Robot", score: 5.42, criticality: 2.05, waiting: 5, duration: 120, winner: true },
+            { name: "Frame Robot", score: 2.10, criticality: 0.80, waiting: 0, duration: 20, winner: false }
+          ]
+        },
+        {
+          time: 320,
+          resource: "crane",
+          scenario: "nash_llm",
+          winner: "Frame Robot",
+          explanation: "Once the disruption resolved, Frame Robot was resumed immediately to close the remaining structural work and reduce end-of-project risk. The short residual duration made this allocation efficient and recovery-oriented.",
+          candidates: [
+            { name: "Frame Robot", score: 5.80, criticality: 2.20, waiting: 120, duration: 20, winner: true },
+            { name: "Roof Robot", score: 3.20, criticality: 1.00, waiting: 0, duration: 0, winner: false }
+          ]
+        }
+      ]
+    };
+
+    let selectedScenario = "nash_llm";
+
+    function percent(value, max) {
+      return Math.max(0, Math.min(100, (value / max) * 100));
+    }
+
+    function renderKpis() {
+      const baseline = dashboardData.scenarios.baseline;
+      const best = dashboardData.scenarios.nash_llm;
+      const kpis = [
+        {
+          label: "Best Scenario",
+          value: dashboardData.overview.bestScenario,
+          help: "The strongest combination of performance and explainability."
+        },
+        {
+          label: "Improvement vs Baseline",
+          value: dashboardData.overview.improvement.toFixed(1) + "%",
+          help: `${baseline.completion} min → ${best.completion} min`
+        },
+        {
+          label: "LLM API Calls",
+          value: dashboardData.overview.llmCalls,
+          help: "How often the dashboard run asked the LLM for reasoning."
+        },
+        {
+          label: "Disruption Window",
+          value: dashboardData.overview.disruptionWindow,
+          help: "The interval where material delay affects schedule flow."
+        },
+        {
+          label: "Conflicts in Best Run",
+          value: best.conflicts,
+          help: "The number of contested resource-allocation decisions."
+        },
+        {
+          label: "Schedule Stability",
+          value: best.stability.toFixed(1) + "%",
+          help: "How much of the operational plan stays intact after disruption."
+        }
+      ];
+
+      const root = document.getElementById("kpiGrid");
+      root.innerHTML = kpis.map(k => `
+        <div class="kpi">
+          <div class="label">${k.label}</div>
+          <div class="value">${k.value}</div>
+          <div class="help">${k.help}</div>
+        </div>
+      `).join("");
+    }
+
+    function renderScenarioCards() {
+      const root = document.getElementById("scenarioCards");
+      root.innerHTML = Object.entries(dashboardData.scenarios).map(([key, s]) => `
+        <div class="scenario-card ${key === selectedScenario ? 'active' : ''}">
+          <div class="title">${s.label}</div>
+          <div class="metric-line"><span>Completion Time</span><span>${s.completion} min</span></div>
+          <div class="metric-line"><span>Conflicts</span><span>${s.conflicts}</span></div>
+          <div class="metric-line"><span>Avg Resolution</span><span>${s.avgResolutionMs.toFixed(1)} ms</span></div>
+          <div class="metric-line"><span>Recovery</span><span>${s.recovery} min</span></div>
+          <div class="metric-line"><span>Stability</span><span>${s.stability.toFixed(1)}%</span></div>
+        </div>
+      `).join("");
+    }
+
+    function renderSelector() {
+      const select = document.getElementById("scenarioSelect");
+      select.innerHTML = Object.entries(dashboardData.scenarios)
+        .map(([key, s]) => `<option value="${key}" ${key === selectedScenario ? 'selected' : ''}>${s.label}</option>`)
+        .join("");
+      select.onchange = (e) => {
+        selectedScenario = e.target.value;
+        renderScenarioCards();
+        renderScenarioSummary();
+        renderTimeline();
+        renderResourceBars();
+      };
+    }
+
+    function renderScenarioSummary() {
+      const s = dashboardData.scenarios[selectedScenario];
+      document.getElementById("scenarioSummary").textContent = s.summary;
+    }
+
+    function renderCompletionBars() {
+      const maxVal = Math.max(...Object.values(dashboardData.scenarios).map(s => s.completion));
+      const root = document.getElementById("completionBars");
+      root.innerHTML = Object.entries(dashboardData.scenarios).map(([key, s]) => `
+        <div class="bar-row">
+          <div class="name">${s.label}</div>
+          <div class="bar-track">
+            <div class="bar-fill ${key === 'baseline' ? 'danger' : key === 'nash_only' ? 'warn' : ''}" style="width:${percent(s.completion, maxVal)}%"></div>
+          </div>
+          <div>${s.completion} min</div>
+        </div>
+      `).join("");
+    }
+
+    function renderRecoveryBars() {
+      const root = document.getElementById("recoveryBars");
+      const blocks = [];
+      const maxRecovery = Math.max(...Object.values(dashboardData.scenarios).map(s => s.recovery));
+      const maxStability = 100;
+      Object.values(dashboardData.scenarios).forEach(s => {
+        blocks.push(`
+          <div class="bar-row">
+            <div class="name">${s.label} — Recovery</div>
+            <div class="bar-track"><div class="bar-fill warn" style="width:${percent(s.recovery, maxRecovery)}%"></div></div>
+            <div>${s.recovery} min</div>
+          </div>
+          <div class="bar-row">
+            <div class="name">${s.label} — Stability</div>
+            <div class="bar-track"><div class="bar-fill" style="width:${percent(s.stability, maxStability)}%"></div></div>
+            <div>${s.stability.toFixed(1)}%</div>
+          </div>
+        `);
+      });
+      root.innerHTML = blocks.join("");
+    }
+
+    function renderTimeline() {
+      const scenario = dashboardData.scenarios[selectedScenario];
+      const root = document.getElementById("timelineRoot");
+      const maxTime = Math.max(scenario.completion, 340);
+      const lanes = [...new Set(scenario.timeline.map(t => t.lane))];
+
+      const tickStep = 20;
+      const usableWidth = 820;
+      const pxPerMinute = usableWidth / maxTime;
+
+      const tickHtml = [];
+      for (let t = 0; t <= maxTime; t += tickStep) {
+        const x = t * pxPerMinute;
+        tickHtml.push(`
+          <div class="tick" style="left:${x}px"></div>
+          <div class="tick-label" style="left:${x}px">${t}</div>
+        `);
+      }
+
+      const disruptionLeft = 200 * pxPerMinute;
+      const disruptionWidth = (320 - 200) * pxPerMinute;
+
+      const laneHtml = lanes.map(lane => {
+        const segments = scenario.timeline.filter(t => t.lane === lane).map(seg => {
+          const left = seg.start * pxPerMinute;
+          const width = Math.max(4, (seg.end - seg.start) * pxPerMinute);
+          return `<div class="task-bar ${seg.type}" style="left:${left}px;width:${width}px" title="${seg.label}: ${seg.start}-${seg.end}">${seg.label}</div>`;
+        }).join("");
+
+        return `
+          <div class="lane">
+            <div class="lane-label">${lane}</div>
+            <div class="lane-track">
+              <div class="event-band" style="left:${disruptionLeft}px;width:${disruptionWidth}px"></div>
+              ${segments}
+            </div>
+          </div>
+        `;
+      }).join("");
+
+      root.innerHTML = `
+        <div class="time-scale">
+          ${tickHtml.join("")}
+        </div>
+        ${laneHtml}
+      `;
+    }
+
+    function renderResourceBars() {
+      const scenario = dashboardData.scenarios[selectedScenario];
+      const resources = scenario.resourceUtilization;
+      const maxVal = 100;
+      const root = document.getElementById("resourceBars");
+      root.innerHTML = Object.entries(resources).map(([key, value]) => `
+        <div class="bar-row">
+          <div class="name">${key.replaceAll('_', ' ')}</div>
+          <div class="bar-track"><div class="bar-fill" style="width:${percent(value, maxVal)}%"></div></div>
+          <div>${value.toFixed(1)}%</div>
+        </div>
+      `).join("") + `<div class="mini-note">Higher utilization can indicate effective resource use, but it can also signal bottlenecks and increased conflict probability.</div>`;
+    }
+
+    function renderConflictExplorer() {
+      const range = document.getElementById("conflictRange");
+      range.max = dashboardData.conflicts.length - 1;
+      range.value = 0;
+      range.oninput = () => renderConflictDetails(Number(range.value));
+      renderConflictDetails(0);
+    }
+
+    function renderConflictDetails(index) {
+      const event = dashboardData.conflicts[index];
+      document.getElementById("conflictHeading").textContent = `Conflict at t=${event.time}`;
+      document.getElementById("conflictMeta").textContent = `Resource: ${event.resource} • Scenario: ${dashboardData.scenarios[event.scenario].label}`;
+      document.getElementById("conflictWinnerBadge").textContent = `Winner: ${event.winner}`;
+      document.getElementById("conflictExplanation").textContent = event.explanation;
+
+      const tbody = document.getElementById("conflictTable");
+      tbody.innerHTML = event.candidates.map(c => `
+        <tr class="${c.winner ? 'winner-row' : ''}">
+          <td>${c.name}</td>
+          <td>${c.score.toFixed(2)}</td>
+          <td>${c.criticality.toFixed(2)}</td>
+          <td>${c.waiting} min</td>
+          <td>${c.duration} min</td>
+          <td>${c.winner ? '<span class="winner-label">Selected</span>' : 'Deferred'}</td>
+        </tr>
+      `).join("");
+    }
+
+    renderKpis();
+    renderScenarioCards();
+    renderSelector();
+    renderScenarioSummary();
+    renderCompletionBars();
+    renderRecoveryBars();
+    renderTimeline();
+    renderResourceBars();
+    renderConflictExplorer();
+  </script>
+</body>
+</html>
